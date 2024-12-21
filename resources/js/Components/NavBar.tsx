@@ -7,11 +7,11 @@ const Navbar = () => {
       {/* <div className="text-blue-600 font-bold text-xl">ATLAS CC</div> */}
       <img  src="/img/logo.png" alt="" className="h-24 pl-10" />
       <ul className="hidden md:flex space-x-6">
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold">About us</li>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold">Services</li>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold">Doctors</li>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold">Success Stories</li>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold">Contact</li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold" style={{ fontFamily: 'Poppins' , fontWeight: '400' }}>About us</li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold" style={{ fontFamily: 'Poppins' , fontWeight: '400' }}>Services</li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold" style={{ fontFamily: 'Poppins' , fontWeight: '400' }}>Doctors</li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold" style={{ fontFamily: 'Poppins' , fontWeight: '400' }}>Success Stories</li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold" style={{ fontFamily: 'Poppins' , fontWeight: '400' }}>Contact</li>
       </ul>
       <button className="hidden md:block bg-[#004aaf] text-white px-8 py-3  rounded-lg hover:bg-blue-700">
         Book an Appointment

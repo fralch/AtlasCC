@@ -43,9 +43,21 @@ const Slider = () => {
                     <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-10">
                         <div className="text-left max-w-lg">
                             <div className="flex flex-row">
-                                <h1 className="text-[#004aaf] text-3xl md:text-5xl font-bold leading-tight ">
+                                <h1
+                                    className="text-[#004aaf] text-3xl md:text-5xl font-bold leading-tight "
+                                    style={{
+                                        fontFamily: "Poppins",
+                                        fontWeight: "400",
+                                    }}
+                                >
                                     We’re here to help <br />
-                                    <span className="text-[#007dff] md:text-7xl ">
+                                    <span
+                                        className="text-[#007dff] md:text-7xl "
+                                        style={{
+                                            fontFamily: "Poppins",
+                                            fontWeight: "700",
+                                        }}
+                                    >
                                         Your Health
                                     </span>
                                 </h1>
@@ -78,7 +90,7 @@ const Slider = () => {
                 >
                     <section className="container mx-auto py-10">
                         <div className="bg-white shadow-lg rounded-lg p-6 max-w-sm mx-auto md:mx-0">
-                            <h2 className="text-[#004aaf] font-bold text-2xl mb-4">
+                            <h2 className="text-[#004aaf] font-bold text-lg mb-4 text-center" style={{ fontSize: '1.3rem'}}>
                                 ¡Agenda tu cita hoy mismo!
                             </h2>
                             <p className="text-gray-700 mb-4 text-sm">
@@ -136,9 +148,21 @@ const Slider = () => {
                     <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-10">
                         <div className="text-left max-w-lg">
                             <div className="flex flex-row">
-                                <h1 className="text-[#004aaf] text-3xl md:text-5xl font-bold leading-tight ">
+                                <h1
+                                    className="text-[#004aaf] text-3xl md:text-5xl font-bold leading-tight "
+                                    style={{
+                                        fontFamily: "Poppins",
+                                        fontWeight: "400",
+                                    }}
+                                >
                                     We’re here to help <br />
-                                    <span className="text-[#007dff] md:text-7xl ">
+                                    <span
+                                        className="text-[#007dff] md:text-7xl "
+                                        style={{
+                                            fontFamily: "Poppins",
+                                            fontWeight: "700",
+                                        }}
+                                    >
                                         Your Health
                                     </span>
                                 </h1>
@@ -171,7 +195,7 @@ const Slider = () => {
                 >
                     <section className="container mx-auto py-10">
                         <div className="bg-white shadow-lg rounded-lg p-6 max-w-sm mx-auto md:mx-0">
-                            <h2 className="text-[#004aaf] font-bold text-2xl mb-4">
+                            <h2 className="text-[#004aaf] font-bold text-lg mb-4 text-center" style={{ fontSize: '1.3rem'}}>
                                 ¡Agenda tu cita hoy mismo!
                             </h2>
                             <p className="text-gray-700 mb-4 text-sm">
