@@ -10,7 +10,8 @@ const Nosotros = () => {
             </h1>
 
             <div className="flex flex-row items-center ml-40">
-                <p className="ml-10 bg-white py-10 px-10 w-2/4 mr-52 text-lg rounded-3xl">
+            <p className="bg-white py-6 px-6 sm:py-8 sm:px-8 lg:py-10 lg:px-10 w-full md:w-3/4 lg:w-3/4 text-base sm:text-lg rounded-3xl ml-4 md:ml-10 lg:mr-20 lg:ml-0">
+
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
                     magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
