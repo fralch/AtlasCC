@@ -105,9 +105,9 @@ const Servicios = () => {
                             alt="Masajista trabajando"
                             className="rounded-2xl shadow-lg relative z-10"
                         />
-                        <div className="absolute inset-0 bottom-0 transform translate-y-5  bg-[#38b5ff] rounded-2xl z-0"></div>
+                        <div className="absolute inset-0 bottom-0 transform translate-y-5 translate-x-5  bg-[#38b5ff] rounded-2xl z-0"></div>
                     </div>
-                    <div className="w-full md:w-3/4 bg-white p-8 rounded-lg shadow-md">
+                    <div className="w-full md:w-4/5 bg-white p-8 rounded-lg shadow-md">
                         <h2 className="text-5xl font-bold text-[#004aaf]" style={{ fontWeight: '400', }}>
                             Deep Tissue <span style={{ fontWeight: '700' }}>Massage</span>
                         </h2>
