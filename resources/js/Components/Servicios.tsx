@@ -8,37 +8,43 @@ import "swiper/css/pagination";
 const Servicios = () => {
     const servicios = [
         {
-            titulo: "Deep Tissue Massage",
-            descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            titulo: "Deep Tissue ",
+            subtitulo: "Massage", 
+            descripcion: "Lorem ipsum dol1or sit amet, consectetur adipiscing elit.",
             imagen: "/img/FOTOS/servicios1.png",
             link: "#"
         },
         {
-            titulo: "Automated Massage (roller table)",
+            titulo: "Automated Massage ",
+            subtitulo: "(roller table)",
             descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             imagen: "/img/FOTOS/servicios2.png",
             link: "#"
         },
         {
-            titulo: "Digital X-Rays",
+            titulo: "Digital ",
+            subtitulo: "X-Rays",
             descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             imagen: "/img/FOTOS/servicios3.png",
             link: "#"
         },
         {
-            titulo: "Advanced Electrotherapy Treatments",
+            titulo: "Advanced Electrotherapy ",
+            subtitulo: "Treatments",
             descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             imagen: "/img/FOTOS/servicios4.png",
             link: "#"
         },
         {
-            titulo: "Adjustment Treatment",
+            titulo: "Adjustment",
+            subtitulo: "Treatments",
             descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             imagen: "/img/FOTOS/servicios5.png",
             link: "#"
         },
         {
-            titulo: "Therapy",
+            titulo: " ",
+            subtitulo: "Therapy",
             descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             imagen: "/img/FOTOS/servicios6.png",
             link: "#"
@@ -75,7 +81,8 @@ const Servicios = () => {
                                     className="w-full h-48 object-cover mx-auto p-3"
                                 />
                                 <div className="p-4">
-                                    <h3 className="text-4xl font-semibold text-white text-center" >{servicio.titulo}</h3>
+                                    <h3 className="text-4xl font-semibold text-white text-center" style={{  fontWeight: '200', fontSize: '2.5rem' }}>{servicio.titulo}</h3>
+                                    <h3 className="text-4xl font-semibold text-white text-center" style={{  fontWeight: '800', fontSize: '2.5rem' }}>{servicio.subtitulo}</h3>
                                     <p className="text-gray-600 mt-2 text-center">{servicio.descripcion}</p>
                                     <a
                                         href={servicio.link}
@@ -91,33 +98,40 @@ const Servicios = () => {
             </div>
 
             <div className="bg-gray-100 py-10 px-5">
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 ">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
                     <div className="relative w-full md:w-1/2">
                         <img
-                            src="ruta-de-la-imagen.jpg"
+                            src="/img/FOTOS/servicios_only.png"
                             alt="Masajista trabajando"
-                            className="rounded-lg shadow-lg"
+                            className="rounded-2xl shadow-lg relative z-10"
                         />
-                        <div className="absolute top-0 left-0 bg-blue-500 w-16 h-16 rounded-br-lg"></div>
+                        <div className="absolute inset-0 bottom-0 transform translate-y-5  bg-[#38b5ff] rounded-2xl z-0"></div>
                     </div>
-                    <div className="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-md">
-                        <h2 className="text-3xl font-bold text-blue-600">
-                            Deep Tissue <span className="text-blue-800">Massage</span>
+                    <div className="w-full md:w-3/4 bg-white p-8 rounded-lg shadow-md">
+                        <h2 className="text-5xl font-bold text-[#004aaf]" style={{ fontWeight: '400', }}>
+                            Deep Tissue <span style={{ fontWeight: '700' }}>Massage</span>
                         </h2>
                         <p className="text-gray-700 mt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam...
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                            tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
                         </p>
                         <p className="text-gray-700 mt-4">
-                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis...
+                            Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod
+                            nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+                            illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+
                         </p>
                         <button
-                            className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+                            className="mt-6 bg-[#004aaf] text-white py-4 px-8 rounded-md hover:bg-blue-700"
                         >
                             Agenda tu cita
                         </button>
                     </div>
                 </div>
             </div>
+
         </section>
     );
 };
