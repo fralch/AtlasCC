@@ -6,6 +6,7 @@ import Slider from "@/Components/Slider";
 import Nosotros from "@/Components/nosotros";
 import Servicios from "@/Components/Servicios";
 import Membresias from "@/Components/membresias";
+import Doctores from "@/Components/doctores";
 
 export default function Welcome() {
     return (
@@ -16,6 +17,7 @@ export default function Welcome() {
             <Nosotros />
             <Servicios />
             <Membresias />
+            <Doctores />
             <main className="bg-gray-100">
                 {/* Hero Section */}
 
