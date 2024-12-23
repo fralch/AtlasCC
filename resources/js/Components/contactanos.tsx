@@ -53,7 +53,7 @@ const Contactanos = () => {
                         height="400"
                         frameBorder="0"
                         scrolling="no"
-                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Rambles,%201%20Barcelona,%20Spain+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Huancayo,%201%20Junin,%20Peru+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                         title="Google Map"
                         className="rounded-lg shadow-lg"
                     ></iframe>
