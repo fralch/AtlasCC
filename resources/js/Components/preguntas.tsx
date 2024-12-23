@@ -34,17 +34,17 @@ const Preguntas = () => {
     ];
 
     return (
-        <section className="bg-[url('/img/FONDOS/servicios.png')] bg-cover bg-center py-20">
-            <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-60 flex flex-col md:flex-row justify-between items-center ">
+        <section className="bg-[url('/img/FONDOS/servicios.png')] bg-cover bg-center pt-20">
+            <div className="max-w-full mx-auto px-4 sm:px-6 2xl:px-60 xl:px-20 flex flex-col md:flex-row justify-between items-center ">
                 
                 {/* Sección de Preguntas Frecuentes */}
-                <div className="md:w-2/3 mb-8 md:mb-0">
+                <div className="w-2/3 mb-8 md:mb-0">
                     <h2 className="text-6xl font-bold text-[#004aaf] mb-4" style={{ fontWeight: '400' }}>Que opinan  <span  style={{ fontWeight: '700' }}>  nuestros</span></h2>
                     <h2 className="text-6xl font-bold text-[#004aaf] mb-4" style={{ fontWeight: '400' }}>pacientes</h2>
                 </div>
 
                 {/* Sección Swiper */}
-                <div className="md:w-1/2">
+                <div className="w-1/2">
                     <Swiper
                         modules={[Navigation, Pagination, A11y]}
                         spaceBetween={20}
@@ -86,8 +86,8 @@ const Preguntas = () => {
                     </Swiper>
                 </div>
             </div>
-            <div className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-60 mt-20" id="preguntas">
-                <ul className="md:w-7/12 space-y-4">
+            <div className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 2xl:px-60 xl:px-20 mt-20" id="preguntas">
+                <ul className="xl:w-7/12 w-1/2 space-y-4">
                      <li className="bg-slate-300 text-[#004aaf] hover:text-gray-800 transition-all duration-200 cursor-pointer text-lg font-medium px-6 py-3 rounded-full"> <a href="#">Por qué debo tomar tratamiento? </a></li>
                      <li className="bg-slate-300 text-[#004aaf] hover:text-gray-800 transition-all duration-200 cursor-pointer text-lg font-medium px-6 py-3 rounded-full"> <a href="#">¿Por qué debo recibir tratamiento quiropráctico después de un accidente de auto?</a></li>
                      <li className="bg-slate-300 text-[#004aaf] hover:text-gray-800 transition-all duration-200 cursor-pointer text-lg font-medium px-6 py-3 rounded-full"> <a href="#">¿Debo recibir tratamiento quiropráctico si no siento dolor aparente después del accidente?</a></li>

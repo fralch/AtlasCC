@@ -8,6 +8,7 @@ import Servicios from "@/Components/Servicios";
 import Membresias from "@/Components/membresias";
 import Doctores from "@/Components/doctores";
 import Preguntas from "@/Components/preguntas";
+import Contactanos from "@/Components/contactanos";
 
 export default function Welcome() {
     return (
@@ -20,6 +21,7 @@ export default function Welcome() {
             <Membresias />
             <Doctores />
             <Preguntas />
+            <Contactanos />
             <main className="bg-gray-100">
                 {/* Hero Section */}
 
