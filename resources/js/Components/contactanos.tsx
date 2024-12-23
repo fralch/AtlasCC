@@ -46,7 +46,7 @@ const Contactanos = () => {
             </div>
 
             {/* Mapa y texto adicional */}
-            <div className="mt-16 bg-gray-100 py-10">
+            <div className="mt-16  py-10">
                 <div className="max-w-5xl mx-auto px-6 lg:px-0">
                     <iframe
                         width="100%"
@@ -58,12 +58,12 @@ const Contactanos = () => {
                         className="rounded-lg shadow-lg"
                     ></iframe>
 
-                    <div className="text-center mt-6">
+                    <div className="text-center mt-16">
                         <p className="text-5xl font-medium text-[#003895]">Consult your healt</p>
                         <p className="text-5xl font-extrabold text-[#003895]">with a professional</p>
                         <a
                             href="#"
-                            className="mt-4 inline-block px-10 py-4 bg-[#003895] text-white  rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+                            className="mt-10 inline-block px-10 py-4 bg-[#003895] text-white  rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
                         >
                             Book an Appointment
                         </a>
