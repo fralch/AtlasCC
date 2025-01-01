@@ -118,7 +118,7 @@ const Slider = () => {
                                 />
                                 <div className="relative">
                                     <input
-                                        type="date"
+                                        type="text"
                                         className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
                                         onFocus={(e) => e.target.type = 'date'}
                                         onBlur={(e) => {
@@ -239,7 +239,7 @@ const Slider = () => {
                                 />
                                 <div className="relative">
                                     <input
-                                        type="date"
+                                        type="text"
                                         className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
                                         onFocus={(e) => e.target.type = 'date'}
                                         onBlur={(e) => {
