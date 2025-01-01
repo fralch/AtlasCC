@@ -39,12 +39,7 @@ const Doctores = () => {
                                 Lorem ipsum dolor sit amet, consectetuer
                                 adipiscing elit, sed diam nonummy nibh{" "}
                             </p>
-                            <button
-                                className="bg-white text-[#004aaf] px-4 py-2 rounded-xl"
-                                style={{ fontWeight: "400" }}
-                            >
-                                View Profile
-                            </button>
+                           
                         </div>
                         <div className="p-3 rounded-3xl w-[350px] mx-auto">
                             <img src="/img/FOTOS/doctores2.png" alt="" />
@@ -61,12 +56,7 @@ const Doctores = () => {
                                 Lorem ipsum dolor sit amet, consectetuer
                                 adipiscing elit, sed diam nonummy nibh{" "}
                             </p>
-                            <button
-                                className="bg-white text-[#004aaf] px-4 py-2 rounded-xl"
-                                style={{ fontWeight: "400" }}
-                            >
-                                View Profile
-                            </button>
+                           
                         </div>
                         <div className="p-3 rounded-3xl w-[350px] mx-auto">
                             <img src="/img/FOTOS/doctores3.png" alt="" />
@@ -83,12 +73,7 @@ const Doctores = () => {
                                 Lorem ipsum dolor sit amet, consectetuer
                                 adipiscing elit, sed diam nonummy nibh{" "}
                             </p>
-                            <button
-                                className="bg-white text-[#004aaf] px-4 py-2 rounded-xl"
-                                style={{ fontWeight: "400" }}
-                            >
-                                View Profile
-                            </button>
+                          
                         </div>
                     </div>
                 </div>
@@ -110,17 +95,20 @@ const Doctores = () => {
                             de Éxito
                         </h4>
                         <p className="text-lg leading-7 text-white">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit, sed diam nonummy nibh euismod tincidunt ut
-                            laoreet dolore magna aliquam erat volutpat. Ut wisi
-                            enim ad minim veniam, quis nostrud exerci tation
-                            ullamcorper suscipit lobortis nisl ut aliquip ex ea
-                            commodo consequat. Duis autem vel eum iriure dolor
-                            in hendrerit in vulputate velit esse molestie
-                            consequat, vel illum dolore eu feugiat nulla
-                            facilisis at vero eros et accumsan et iusto odio
-                            dignissim qui blandit praesent luptatum zzril
-                            delenit augue duis dolore te feugait nulla facilisi.
+                        "Mi nombre es Marta y soy de Santa Marta, Colombia. En agosto
+                        sufrí un accidente automovilístico muy fuerte mientras viajaba
+                        por la carretera con mi hermana, que estaba embarazada. Un
+                        auto nos impactó y dimos tres vueltas sobre el pavimento. Fue
+                        una experiencia muy traumática, pero gracias a Dios pudimos
+                        salir adelante.
+                        Después del accidente, comencé mi proceso de recuperación
+                        con los médicos y el apoyo de los abogados. Mi hermana y yo
+                        logramos sanar nuestras lesiones, y además, continuamos con
+                        el proceso legal. Gracias a la ayuda de los especialistas,
+                        logramos recibir la compensación que merecíamos por el daño
+                        que sufrimos. Estoy muy agradecida con todo el equipo de Atlas
+                        y con los abogados por ayudarnos en este momento tan difícil y
+                        darnos la oportunidad de retomar nuestras vidas."
                         </p>
                     </div>
                     {/* Imagen */}

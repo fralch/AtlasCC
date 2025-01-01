@@ -8,44 +8,44 @@ import "swiper/css/pagination";
 const Servicios = () => {
     const servicios = [
         {
-            titulo: "Deep Tissue ",
-            subtitulo: "Massage", 
-            descripcion: "Lorem ipsum dol1or sit amet, consectetur adipiscing elit.",
+            titulo: "Masaje  ",
+            subtitulo: "Descontracturantes", 
+            descripcion: "Relaja tus músculos y alivia el estrés con técnicas especializadas que liberan tensiones acumuladas.",
             imagen: "/img/FOTOS/servicios1.png",
             link: "#"
         },
         {
-            titulo: "Automated Massage ",
-            subtitulo: "(roller table)",
-            descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            titulo: "Roller",
+            subtitulo: "Table",
+            descripcion: "Disfruta de un masaje automatizado que mejora la circulación y relaja la columna vertebral.",
             imagen: "/img/FOTOS/servicios2.png",
             link: "#"
         },
         {
-            titulo: "Digital ",
-            subtitulo: "X-Rays",
-            descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            titulo: "Análisis ",
+            subtitulo: "Rayos X",
+            descripcion: "Diagnósticos precisos para identificar lesiones y personalizar tu tratamiento.",
             imagen: "/img/FOTOS/servicios3.png",
             link: "#"
         },
         {
-            titulo: "Advanced Electrotherapy ",
-            subtitulo: "Treatments",
-            descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            titulo: "Electroterapia ",
+            subtitulo: "Avanzada",
+            descripcion: "Estimula tus músculos y reduce el dolor con tecnología de última generación.",
             imagen: "/img/FOTOS/servicios4.png",
             link: "#"
         },
         {
-            titulo: "Adjustment",
-            subtitulo: "Treatments",
-            descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            titulo: "Ajuste",
+            subtitulo: "Quiropráctico",
+            descripcion: "Realinea tu columna y mejora tu movilidad con ajustes quiroprácticos profesionales.",
             imagen: "/img/FOTOS/servicios5.png",
             link: "#"
         },
         {
-            titulo: " ",
-            subtitulo: "Therapy",
-            descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            titulo: "Terapia ",
+            subtitulo: "Especializada",
+            descripcion: "Sesiones terapeuticas diseñadas para abordar tus necesidades específicas de recuperación",
             imagen: "/img/FOTOS/servicios6.png",
             link: "#"
         },
@@ -81,8 +81,8 @@ const Servicios = () => {
                                     className="w-full h-48 object-cover mx-auto p-3"
                                 />
                                 <div className="p-4">
-                                    <h3 className="text-4xl font-semibold text-white text-center" style={{  fontWeight: '200', fontSize: '2.5rem' }}>{servicio.titulo}</h3>
-                                    <h3 className="text-4xl font-semibold text-white text-center" style={{  fontWeight: '800', fontSize: '2.5rem' }}>{servicio.subtitulo}</h3>
+                                    <h3 className="text-2xl font-semibold text-white text-center" style={{ fontWeight: '200' }}>{servicio.titulo}</h3>
+                                    <h3 className="text-2xl font-semibold text-white text-center mb-2" style={{ fontWeight: '800' }}>{servicio.subtitulo}</h3>
                                     <p className="text-gray-600 mt-2 text-center">{servicio.descripcion}</p>
                                     <a
                                         href={servicio.link}
@@ -108,20 +108,14 @@ const Servicios = () => {
                         <div className="absolute inset-0 bottom-0 transform translate-y-5 translate-x-5  bg-[#38b5ff] rounded-2xl z-0"></div>
                     </div>
                     <div className="w-full md:w-4/5 bg-white p-8 rounded-lg shadow-md">
-                        <h2 className="text-5xl font-bold text-[#004aaf]" style={{ fontWeight: '400', }}>
-                            Deep Tissue <span style={{ fontWeight: '700' }}>Massage</span>
+                        <h2 className="text-4xl font-bold text-[#004aaf]" style={{ fontWeight: '400', }}>
+                            Masaje de tejido <span style={{ fontWeight: '700' }}>profundo</span>
                         </h2>
                         <p className="text-gray-700 mt-4">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                            tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+                            El masaje de tejido profundo es una técnica terapéutica especializada que se centra en las capas más profundas del tejido muscular. Esta técnica aplica presión firme y movimientos lentos para alcanzar las capas más profundas de los músculos y el tejido conectivo, ayudando a aliviar la tensión muscular crónica y el dolor.
                         </p>
                         <p className="text-gray-700 mt-4">
-                            Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod
-                            nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-                            illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
-
+                            Este tipo de masaje es especialmente beneficioso para tratar problemas musculares crónicos, lesiones deportivas, y tensión muscular persistente. Además de aliviar el dolor, puede mejorar el rango de movimiento, reducir la inflamación, y promover la circulación sanguínea. Es una terapia ideal para atletas, personas con trabajos sedentarios o aquellos que experimentan dolor muscular crónico.
                         </p>
                         <button
                             className="mt-6 bg-[#004aaf] text-white py-4 px-8 rounded-md hover:bg-blue-700"

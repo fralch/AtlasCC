@@ -42,23 +42,27 @@ const Slider = () => {
                 >
                     <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-10">
                         <div className="text-left max-w-lg">
+                            <p className="text-[#0f68d9] text-2xl font-bold">
+                            ¿Sufriste un accidente de auto?
+                            </p>
                             <div className="flex flex-row">
                                 <h1
                                     className="text-[#004aaf] text-3xl md:text-5xl font-bold leading-tight "
                                     style={{
                                         fontFamily: "Poppins",
-                                        fontWeight: "400",
+                                        fontWeight: "800",
                                     }}
                                 >
-                                    We’re here to help <br />
+                                   Recibe tratamiento <br />
                                     <span
                                         className="text-[#007dff] md:text-7xl "
                                         style={{
                                             fontFamily: "Poppins",
                                             fontWeight: "700",
+                                            fontSize: "6rem",
                                         }}
                                     >
-                                        Your Health
+                                       Gratuito
                                     </span>
                                 </h1>
                                 <img
@@ -68,8 +72,11 @@ const Slider = () => {
                                 />
                             </div>
                             <p className="text-gray-700 mt-4">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Donec non pulvinar tortor.
+                            Nos especializamos en ayudar a personas que han
+                            sufrido accidentes automovilísticos. Ofrecemos
+                            tratamientos quiroprácticos completamente
+                            gratuitos para que puedas concentrarte en tu
+                            recuperación sin preocupaciones
                             </p>
                             <button className="mt-6 bg-[#004aaf] text-white px-8 py-4 rounded-lg hover:bg-blue-700 text-xl ">
                                 Programa tu Cita
@@ -94,30 +101,39 @@ const Slider = () => {
                                 ¡Agenda tu cita hoy mismo!
                             </h2>
                             <p className="text-gray-700 mb-4 text-sm">
-                                Enter your contacts below to schedule an
-                                appointment or discuss it with us in details.
+                            Nuestros profesionales están listos para
+                            ayudarte. Ingresa los siguientes datos
                             </p>
                             <form>
                                 <input
                                     type="text"
-                                    placeholder="Your name*"
+                                    placeholder="Nombre*"
                                     className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
                                 />
-                                <input
-                                    type="email"
-                                    placeholder="Your email address*"
-                                    className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
-                                />
+                              
                                 <input
                                     type="tel"
-                                    placeholder="Phone number*"
+                                    placeholder="Teléfono*"
                                     className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
                                 />
+                                <div className="relative">
+                                    <input
+                                        type="date"
+                                        className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
+                                        onFocus={(e) => e.target.type = 'date'}
+                                        onBlur={(e) => {
+                                            if (!e.target.value) {
+                                                e.target.type = 'text'
+                                            }
+                                        }}
+                                        placeholder="Dia de la cita*"
+                                    />
+                                </div>
                                 <button
                                     type="submit"
                                     className="w-full bg-[#004aaf] text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                                 >
-                                    Book Now
+                                    Programar tu cita
                                 </button>
                             </form>
                         </div>
@@ -147,23 +163,27 @@ const Slider = () => {
                 >
                     <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-10">
                         <div className="text-left max-w-lg">
+                            <p className="text-[#0f68d9] text-2xl font-bold">
+                            ¿Sufriste un accidente de auto?
+                            </p>
                             <div className="flex flex-row">
                                 <h1
                                     className="text-[#004aaf] text-3xl md:text-5xl font-bold leading-tight "
                                     style={{
                                         fontFamily: "Poppins",
-                                        fontWeight: "400",
+                                        fontWeight: "800",
                                     }}
                                 >
-                                    We’re here to help <br />
+                                   Recibe tratamiento <br />
                                     <span
                                         className="text-[#007dff] md:text-7xl "
                                         style={{
                                             fontFamily: "Poppins",
                                             fontWeight: "700",
+                                            fontSize: "6rem",
                                         }}
                                     >
-                                        Your Health
+                                       Gratuito
                                     </span>
                                 </h1>
                                 <img
@@ -173,8 +193,11 @@ const Slider = () => {
                                 />
                             </div>
                             <p className="text-gray-700 mt-4">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Donec non pulvinar tortor.
+                            Nos especializamos en ayudar a personas que han
+                            sufrido accidentes automovilísticos. Ofrecemos
+                            tratamientos quiroprácticos completamente
+                            gratuitos para que puedas concentrarte en tu
+                            recuperación sin preocupaciones
                             </p>
                             <button className="mt-6 bg-[#004aaf] text-white px-8 py-4 rounded-lg hover:bg-blue-700 text-xl ">
                                 Programa tu Cita
@@ -193,36 +216,45 @@ const Slider = () => {
                         textAlign: "left",
                     }}
                 >
-                    <section className="container mx-auto py-10">
+                     <section className="container mx-auto py-10">
                         <div className="bg-white shadow-lg rounded-lg p-6 max-w-sm mx-auto md:mx-0">
                             <h2 className="text-[#004aaf] font-bold text-lg mb-4 text-center" style={{ fontSize: '1.3rem'}}>
                                 ¡Agenda tu cita hoy mismo!
                             </h2>
                             <p className="text-gray-700 mb-4 text-sm">
-                                Enter your contacts below to schedule an
-                                appointment or discuss it with us in details.
+                            Nuestros profesionales están listos para
+                            ayudarte. Ingresa los siguientes datos
                             </p>
                             <form>
                                 <input
                                     type="text"
-                                    placeholder="Your name*"
+                                    placeholder="Nombre*"
                                     className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
                                 />
-                                <input
-                                    type="email"
-                                    placeholder="Your email address*"
-                                    className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
-                                />
+                              
                                 <input
                                     type="tel"
-                                    placeholder="Phone number*"
+                                    placeholder="Teléfono*"
                                     className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
                                 />
+                                <div className="relative">
+                                    <input
+                                        type="date"
+                                        className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
+                                        onFocus={(e) => e.target.type = 'date'}
+                                        onBlur={(e) => {
+                                            if (!e.target.value) {
+                                                e.target.type = 'text'
+                                            }
+                                        }}
+                                        placeholder="Dia de la cita*"
+                                    />
+                                </div>
                                 <button
                                     type="submit"
                                     className="w-full bg-[#004aaf] text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                                 >
-                                    Book Now
+                                    Programar tu cita
                                 </button>
                             </form>
                         </div>

@@ -20,7 +20,7 @@ const Membresias = () => {
                         <ul className="text-[#004aaf] mb-6 p-4 text-lg" style={{ fontWeight: '400' }}>
                             <li>- Consulta médica</li>
                             <li>- 2 Zonas X rays</li>
-                            <li>- 1 Ajusto Semanal</li>
+                            <li>- 1 Ajuste Semanal</li>
                             <li>- Roller Table</li>
                         </ul>
                         <div className="flex justify-center">
@@ -37,7 +37,7 @@ const Membresias = () => {
                         <ul className="text-[#004aaf] mb-6 p-4 text-lg" style={{ fontWeight: '400' }}>
                             <li>- Consulta médica</li>
                             <li>- 2 Zonas X rays</li>
-                            <li>- 1 Ajusto Semanal</li>
+                            <li>- 1 Ajuste Semanal</li>
                             <li>- Roller Table</li>
                             <li>- Electroterapia</li>
                             <li>- 10% de descuento en nuestros servicios</li>
@@ -56,7 +56,7 @@ const Membresias = () => {
                         <ul className="text-[#004aaf] mb-6 p-4 text-lg" style={{ fontWeight: '400' }}>
                             <li>- Consulta médica</li>
                             <li>- 2 Zonas X rays</li>
-                            <li>- 1 Ajusto Semanal</li>
+                            <li>- 1 Ajuste Semanal</li>
                             <li>- Roller Table</li>
                             <li>- Electroterapia o Terapia</li>
                             <li>- 30% de descuento en nuestros servicios</li>

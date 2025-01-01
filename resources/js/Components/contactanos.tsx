@@ -13,10 +13,13 @@ const Contactanos = () => {
             <div className="max-w-6xl mx-auto mt-10 px-6 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 {/* Texto a la izquierda */}
                 <div className="text-left">
-                    <h4 className="text-[#38b5ff] text-7xl font-semibold" style={{ fontWeight: '400' }}>From</h4>
-                    <h4 className="text-[#003895] text-7xl font-semibold mb-4">Get in touch</h4>
+                    <h4 className="text-[#38b5ff] text-7xl font-semibold" style={{ fontWeight: '400' }}>Envíanos tu</h4>
+                    <h4 className="text-[#003895] text-7xl font-semibold mb-4">Consulta</h4>
                     <p className="text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                    Nos encantaría saber de ti. Si tienes preguntas sobre
+                    nuestros servicios, deseas agendar una cita o necesitas
+                    orientación, completa el formulario a continuación y nos
+                    pondremos en contacto contigo lo antes posible.
                     </p>
                 </div>
 
@@ -59,13 +62,14 @@ const Contactanos = () => {
                     ></iframe>
 
                     <div className="text-center mt-16">
-                        <p className="text-5xl font-medium text-[#003895]">Consult your healt</p>
-                        <p className="text-5xl font-extrabold text-[#003895]">with a professional</p>
+                        <p className="text-5xl font-medium text-[#003895]">Consulta tu salud con</p>
+                        <p className="text-5xl font-extrabold text-[#003895]">un profesional</p>
+                        <p className=" text-lg font-medium text-[#303131] w-1/2 mx-auto mt-4" >Haz clic en el botón a continuación para agendar tu cita con nuestro equipo especializado y recibir la atención que necesitas.</p>
                         <a
                             href="#"
                             className="mt-10 inline-block px-10 py-4 bg-[#003895] text-white  rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
                         >
-                            Book an Appointment
+                           Agenda tu cita
                         </a>
                     </div>
                 </div>
