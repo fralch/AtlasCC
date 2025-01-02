@@ -42,7 +42,7 @@ class CitaController extends Controller
             'paciente_id' => 'required|integer|exists:pacientes,id',
             'doctor_id' => 'required|integer|exists:doctors,id',
             'fecha' => 'required|date',
-            'hora' => 'required|date_format:H:i:s',
+            'hora' => 'required|date_format:H:i',
             'motivo' => 'nullable|string',
         ]);
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from '@/config/configAxios';
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,11 +9,11 @@ import "swiper/css/scrollbar";
 
 const Slider = () => {
     const [formData, setFormData] = useState({
-        paciente_id: '',
-        doctor_id: '',
-        fecha: '',
-        hora: '',
-        motivo: ''
+        "nombres": "", 
+        "email": "correo@mail.com", 
+        "telefono": "",
+        "fecha": "", 
+        "hora": ""
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,8 +27,22 @@ const Slider = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/appointments', formData);
-            console.log(response.data);
+            // separar la fecha en fecha y hora : 2025-01-15T23:51
+            console.log(formData.fecha);
+            const [fecha, hora] = formData.fecha.split('T');
+            console.log(fecha); //2025-01-11 21:54
+            console.log(hora); // 23:51
+
+            const response = await axios.post('http://127.0.0.1:8000/pacientes', formData);
+            const {id: paciente_id} = response.data;
+            const response2 = await axios.post('http://127.0.0.1:8000/citas', {
+                paciente_id,
+                doctor_id: 1,
+                fecha,
+                hora,
+                motivo: "Accidente de auto"
+            });
+            console.log(response2.data);
         } catch (error) {
             console.error(error);
         }
@@ -131,34 +145,44 @@ const Slider = () => {
                             Nuestros profesionales están listos para
                             ayudarte. Ingresa los siguientes datos
                             </p>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <input
                                     type="text"
                                     placeholder="Nombre*"
                                     className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
+                                    name="nombres"
+                                    value={formData.nombres}
+                                    onChange={handleChange}
                                 />
                               
                                 <input
                                     type="tel"
                                     placeholder="Teléfono*"
                                     className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
+                                    name="telefono"
+                                    value={formData.telefono}
+                                    onChange={handleChange}
                                 />
                                 <div className="relative">
                                     <input
                                         type="text"
                                         className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
-                                        onFocus={(e) => e.target.type = 'date'}
+                                        onFocus={(e) => e.target.type = 'datetime-local'}
                                         onBlur={(e) => {
                                             if (!e.target.value) {
                                                 e.target.type = 'text'
                                             }
                                         }}
                                         placeholder="Dia de la cita*"
+                                        name="fecha"
+                                        value={formData.fecha}
+                                        onChange={handleChange}
                                     />
                                 </div>
                                 <button
                                     type="submit"
                                     className="w-full bg-[#004aaf] text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                                    disabled={!formData.nombres || !formData.telefono || !formData.fecha}
                                 >
                                     Programar tu cita
                                 </button>
