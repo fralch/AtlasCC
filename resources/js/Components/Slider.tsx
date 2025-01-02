@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -6,6 +8,31 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 const Slider = () => {
+    const [formData, setFormData] = useState({
+        paciente_id: '',
+        doctor_id: '',
+        fecha: '',
+        hora: '',
+        motivo: ''
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('/api/appointments', formData);
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
     return (
         <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
