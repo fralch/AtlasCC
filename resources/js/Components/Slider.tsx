@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from '@/config/configAxios';
+import Swal from 'sweetalert2';
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -43,8 +44,21 @@ const Slider = () => {
                 motivo: "Accidente de auto"
             });
             console.log(response2.data);
+            Swal.fire({
+                icon: 'success',
+                title: '¡Cita programada!',
+                text: 'Tu cita ha sido programada con éxito.',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#0f68d9'
+            });
         } catch (error) {
             console.error(error);
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: 'Ha ocurrido un error al programar la cita.',
+                confirmButtonText: 'Aceptar'
+            });
         }
     };
     return (

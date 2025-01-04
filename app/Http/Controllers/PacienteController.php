@@ -38,7 +38,7 @@ class PacienteController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nombres' => 'required|string|min:1',
-            'email' => 'required|email|unique:pacientes,email',
+            'email' => 'nullable|email',
             'telefono' => 'required|string|min:1',
         ]);
 
