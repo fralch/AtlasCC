@@ -161,9 +161,7 @@ const ReporteCitas: React.FC = () => {
           <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow w-full sm:w-auto">
             Descargar
           </button>
-          <button className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded shadow w-full sm:w-auto">
-            Mostrar
-          </button>
+        
         </div>
 
         {/* Tabla */}
