@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
+import * as XLSX from "xlsx";
 
 // Definir las interfaces
 interface Paciente {
@@ -94,6 +97,35 @@ const ReporteCitas: React.FC = () => {
     setMotivo("");
     setFilteredCitas(citas);
   };
+  const downloadPDF = () => {
+    const doc = new jsPDF() as any;
+    doc.autoTable({
+      head: [["Motivo", "Nombre del Paciente", "Nombre del Doctor", "Fecha", "Hora", "Estado"]],
+      body: filteredCitas.map(cita => [
+        cita.motivo,
+        cita.paciente.nombres,
+        cita.doctor.nombres,
+        cita.fecha,
+        cita.hora,
+        cita.estado
+      ]),
+    });
+    doc.save("reporte_citas.pdf");
+  };
+
+  const downloadExcel = () => {
+    const ws = XLSX.utils.json_to_sheet(filteredCitas.map(cita => ({
+      Motivo: cita.motivo,
+      "Nombre del Paciente": cita.paciente.nombres,
+      "Nombre del Doctor": cita.doctor.nombres,
+      Fecha: cita.fecha,
+      Hora: cita.hora,
+      Estado: cita.estado
+    })));
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "ReporteCitas");
+    XLSX.writeFile(wb, "reporte_citas.xlsx");
+  };
 
   return (
     <div className="min-h-screen bg-blue-100 text-blue-900 p-6">
@@ -146,7 +178,7 @@ const ReporteCitas: React.FC = () => {
             onClick={handleSearch}
             className="col-span-1 bg-blue-700 text-white rounded px-4 py-2"
           >
-           Buscar
+            Buscar
           </button>
           <button
             onClick={handleReset}
@@ -158,10 +190,18 @@ const ReporteCitas: React.FC = () => {
 
         {/* Botones */}
         <div className="flex flex-col sm:flex-row justify-end gap-4 mb-6">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow w-full sm:w-auto">
-            Descargar
+          <button
+            onClick={downloadPDF}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow w-full sm:w-auto"
+          >
+            Descargar PDF
           </button>
-        
+          <button
+            onClick={downloadExcel}
+            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded shadow w-full sm:w-auto"
+          >
+            Descargar Excel
+          </button>
         </div>
 
         {/* Tabla */}
