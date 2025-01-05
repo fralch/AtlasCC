@@ -1,6 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const ReporteCitas = () => {
+// Definir las interfaces
+interface Paciente {
+  id: number;
+  nombres: string;
+  telefono: string;
+  email: string;
+  direccion: string | null;
+  fecha_nacimiento: string | null;
+  genero: string | null;
+  tipo_documento: string | null;
+  numero_documento: string | null;
+  estado: string;
+  foto: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+interface Doctor {
+  id: number;
+  nombres: string;
+  especialidad: string;
+  telefono: string;
+  email: string;
+  direccion: string | null;
+  estado: string;
+  foto: string | null;
+  created_at: string | null;
+  updated_at: string | null;
+}
+
+interface Cita {
+  id: number;
+  paciente_id: number;
+  doctor_id: number;
+  fecha: string;
+  hora: string;
+  estado: string;
+  motivo: string;
+  created_at: string;
+  updated_at: string;
+  paciente: Paciente;
+  doctor: Doctor;
+}
+
+const ReporteCitas: React.FC = () => {
+  const [citas, setCitas] = useState<Cita[]>([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/citas')
+      .then(response => {
+        setCitas(response.data);
+        console.log(response.data);
+      })
+      .catch(error => console.error('Error fetching appointments:', error));
+  }, []);
+
   return (
     <div className="min-h-screen bg-blue-100 text-blue-900 p-6">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-8">
@@ -65,14 +121,24 @@ const ReporteCitas = () => {
               </tr>
             </thead>
             <tbody>
-              {/* Filas vacías */}
-              {[...Array(3)].map((_, index) => (
-                <tr key={index} className="text-center">
-                  <td className="border border-blue-300 p-2" colSpan={6}>
+              {citas.length > 0 ? (
+                citas.map((cita) => (
+                  <tr key={cita.id}>
+                    <td className="border border-blue-300 p-2">{cita.motivo}</td>
+                    <td className="border border-blue-300 p-2">{cita.paciente.nombres}</td>
+                    <td className="border border-blue-300 p-2">{cita.doctor.nombres}</td>
+                    <td className="border border-blue-300 p-2">{cita.fecha}</td>
+                    <td className="border border-blue-300 p-2">{cita.hora}</td>
+                    <td className="border border-blue-300 p-2">{cita.estado}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td className="border border-blue-300 p-2 text-center" colSpan={6}>
                     <span className="text-gray-500">Sin datos disponibles</span>
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>
