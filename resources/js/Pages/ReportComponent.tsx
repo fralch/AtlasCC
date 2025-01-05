@@ -146,13 +146,13 @@ const ReporteCitas: React.FC = () => {
             onClick={handleSearch}
             className="col-span-1 bg-blue-700 text-white rounded px-4 py-2"
           >
-            🔍
+           Buscar
           </button>
           <button
             onClick={handleReset}
             className="col-span-1 bg-red-500 text-white rounded px-4 py-2"
           >
-            ⟳
+            Mostrar Todo
           </button>
         </div>
 
