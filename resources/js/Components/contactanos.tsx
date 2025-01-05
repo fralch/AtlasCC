@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import AppointmentModal from "./AppointmentModal";
 
 
 const Contactanos = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+  
     return (
         <section className="bg-[url('/img/FONDOS/servicios.png')] bg-cover bg-center ">
             {/* Header Section */}
@@ -65,15 +76,17 @@ const Contactanos = () => {
                         <p className="text-5xl font-medium text-[#003895]">Consulta tu salud con</p>
                         <p className="text-5xl font-extrabold text-[#003895]">un profesional</p>
                         <p className=" text-lg font-medium text-[#303131] w-1/2 mx-auto mt-4" >Haz clic en el botón a continuación para agendar tu cita con nuestro equipo especializado y recibir la atención que necesitas.</p>
-                        <a
-                            href="#"
+                        <button
+                            
                             className="mt-10 inline-block px-10 py-4 bg-[#003895] text-white  rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+                            onClick={openModal}
                         >
                            Agenda tu cita
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
+            <AppointmentModal isOpen={isModalOpen} onClose={closeModal} />
         </section>
     );
 };

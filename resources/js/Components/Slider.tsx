@@ -3,12 +3,14 @@ import axios from '@/config/configAxios';
 import Swal from 'sweetalert2';
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import AppointmentModal from './AppointmentModal';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 const Slider = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
         "nombres": "", 
         "email": "correo@mail.com", 
@@ -50,6 +52,14 @@ const Slider = () => {
                 text: 'Tu cita ha sido programada con éxito.',
                 confirmButtonText: 'Aceptar',
                 confirmButtonColor: '#0f68d9'
+            }).then(() => {
+                setFormData({
+                    nombres: "",
+                    email: "correo@mail.com",
+                    telefono: "",
+                    fecha: "",
+                    hora: ""
+                });
             });
         } catch (error) {
             console.error(error);
@@ -61,7 +71,16 @@ const Slider = () => {
             });
         }
     };
+    const openModal = () => {
+        setIsModalOpen(true);
+      };
+    
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
     return (
+        <>
+        <AppointmentModal isOpen={isModalOpen} onClose={closeModal} />
         <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={0} // Sin espacio entre slides
@@ -133,7 +152,7 @@ const Slider = () => {
                             gratuitos para que puedas concentrarte en tu
                             recuperación sin preocupaciones
                             </p>
-                            <button className="mt-6 bg-[#004aaf] text-white px-8 py-4 rounded-lg hover:bg-blue-700 text-xl ">
+                            <button className="mt-6 bg-[#004aaf] text-white px-8 py-4 rounded-lg hover:bg-blue-700 text-xl " onClick={openModal}>
                                 Programa tu Cita
                             </button>
                         </div>
@@ -264,7 +283,7 @@ const Slider = () => {
                             gratuitos para que puedas concentrarte en tu
                             recuperación sin preocupaciones
                             </p>
-                            <button className="mt-6 bg-[#004aaf] text-white px-8 py-4 rounded-lg hover:bg-blue-700 text-xl ">
+                            <button className="mt-6 bg-[#004aaf] text-white px-8 py-4 rounded-lg hover:bg-blue-700 text-xl " onClick={openModal}>
                                 Programa tu Cita
                             </button>
                         </div>
@@ -290,34 +309,44 @@ const Slider = () => {
                             Nuestros profesionales están listos para
                             ayudarte. Ingresa los siguientes datos
                             </p>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <input
                                     type="text"
                                     placeholder="Nombre*"
                                     className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
+                                    name="nombres"
+                                    value={formData.nombres}
+                                    onChange={handleChange}
                                 />
                               
                                 <input
                                     type="tel"
                                     placeholder="Teléfono*"
                                     className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
+                                    name="telefono"
+                                    value={formData.telefono}
+                                    onChange={handleChange}
                                 />
                                 <div className="relative">
                                     <input
                                         type="text"
                                         className="w-full border-gray-300 border rounded-lg px-4 py-2 mb-4 focus:outline-none bg-slate-200 focus:bg-white text-black"
-                                        onFocus={(e) => e.target.type = 'date'}
+                                        onFocus={(e) => e.target.type = 'datetime-local'}
                                         onBlur={(e) => {
                                             if (!e.target.value) {
                                                 e.target.type = 'text'
                                             }
                                         }}
                                         placeholder="Dia de la cita*"
+                                        name="fecha"
+                                        value={formData.fecha}
+                                        onChange={handleChange}
                                     />
                                 </div>
                                 <button
                                     type="submit"
                                     className="w-full bg-[#004aaf] text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                                    disabled={!formData.nombres || !formData.telefono || !formData.fecha}
                                 >
                                     Programar tu cita
                                 </button>
@@ -327,6 +356,7 @@ const Slider = () => {
                 </div>
             </SwiperSlide>
         </Swiper>
+        </>
     );
 };
 

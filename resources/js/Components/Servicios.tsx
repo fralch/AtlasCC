@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
+import AppointmentModal from './AppointmentModal';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Servicios = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+    
     const servicios = [
         {
             titulo: "Masaje  ",
@@ -53,6 +64,7 @@ const Servicios = () => {
 
     return (
         <section className='bg-[url("/img/FONDOS/servicios.png")] py-20 bg-gray-50'>
+            <AppointmentModal isOpen={isModalOpen} onClose={closeModal} />
             <div>
                 <h2 className="text-center text-white bg-[#007dff] max-w-xs mx-auto px-4 py-2 text-2xl rounded-lg">Explora nuestros</h2>
 
@@ -87,6 +99,7 @@ const Servicios = () => {
                                     <a
                                         href={servicio.link}
                                         className="block mt-4 text-center text-white bg-[#004aaf] hover:bg-blue-600 py-2 px-4 rounded-3xl"
+                                        onClick={openModal}
                                     >
                                         Agenda tu cita
                                     </a>
@@ -119,6 +132,7 @@ const Servicios = () => {
                         </p>
                         <button
                             className="mt-6 bg-[#004aaf] text-white py-4 px-8 rounded-md hover:bg-blue-700"
+                            onClick={openModal}
                         >
                             Agenda tu cita
                         </button>
