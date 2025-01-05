@@ -47,15 +47,53 @@ interface Cita {
 
 const ReporteCitas: React.FC = () => {
   const [citas, setCitas] = useState<Cita[]>([]);
+  const [filteredCitas, setFilteredCitas] = useState<Cita[]>([]);
+  const [fecha, setFecha] = useState<string>("");
+  const [nombrePaciente, setNombrePaciente] = useState<string>("");
+  const [nombreDoctor, setNombreDoctor] = useState<string>("");
+  const [estado, setEstado] = useState<string>("");
+  const [motivo, setMotivo] = useState<string>("");
 
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/citas')
       .then(response => {
         setCitas(response.data);
+        setFilteredCitas(response.data);
         console.log(response.data);
       })
       .catch(error => console.error('Error fetching appointments:', error));
   }, []);
+
+  const handleSearch = () => {
+    let filtered = citas;
+
+    if (fecha) {
+      filtered = filtered.filter(cita => cita.fecha === fecha);
+    }
+    if (nombrePaciente) {
+      filtered = filtered.filter(cita => cita.paciente.nombres.toLowerCase().includes(nombrePaciente.toLowerCase()));
+    }
+    if (nombreDoctor) {
+      filtered = filtered.filter(cita => cita.doctor.nombres.toLowerCase().includes(nombreDoctor.toLowerCase()));
+    }
+    if (estado) {
+      filtered = filtered.filter(cita => cita.estado.toLowerCase() === estado.toLowerCase());
+    }
+    if (motivo) {
+      filtered = filtered.filter(cita => cita.motivo.toLowerCase().includes(motivo.toLowerCase()));
+    }
+
+    setFilteredCitas(filtered);
+  };
+
+  const handleReset = () => {
+    setFecha("");
+    setNombrePaciente("");
+    setNombreDoctor("");
+    setEstado("");
+    setMotivo("");
+    setFilteredCitas(citas);
+  };
 
   return (
     <div className="min-h-screen bg-blue-100 text-blue-900 p-6">
@@ -69,31 +107,52 @@ const ReporteCitas: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
           <input
             type="date"
+            value={fecha}
+            onChange={(e) => setFecha(e.target.value)}
             className="p-2 border border-blue-400 rounded focus:outline-none focus:ring focus:ring-blue-300"
           />
           <input
             type="text"
             placeholder="Nombre del Paciente"
+            value={nombrePaciente}
+            onChange={(e) => setNombrePaciente(e.target.value)}
             className="p-2 border border-blue-400 rounded focus:outline-none focus:ring focus:ring-blue-300"
           />
           <input
             type="text"
             placeholder="Nombre del Doctor"
+            value={nombreDoctor}
+            onChange={(e) => setNombreDoctor(e.target.value)}
             className="p-2 border border-blue-400 rounded focus:outline-none focus:ring focus:ring-blue-300"
           />
-          <select className="p-2 border border-blue-400 rounded focus:outline-none focus:ring focus:ring-blue-300">
-            <option>Estado</option>
-            <option>Pendiente</option>
-            <option>Confirmada</option>
-            <option>Cancelada</option>
+          <select
+            value={estado}
+            onChange={(e) => setEstado(e.target.value)}
+            className="p-2 border border-blue-400 rounded focus:outline-none focus:ring focus:ring-blue-300"
+          >
+            <option value="">Estado</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Confirmada">Confirmada</option>
+            <option value="Cancelada">Cancelada</option>
           </select>
           <input
             type="text"
             placeholder="Motivo"
+            value={motivo}
+            onChange={(e) => setMotivo(e.target.value)}
             className="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 p-2 border border-blue-400 rounded focus:outline-none focus:ring focus:ring-blue-300"
           />
-          <button className="col-span-1 bg-blue-700 text-white rounded px-4 py-2">
+          <button
+            onClick={handleSearch}
+            className="col-span-1 bg-blue-700 text-white rounded px-4 py-2"
+          >
             🔍
+          </button>
+          <button
+            onClick={handleReset}
+            className="col-span-1 bg-red-500 text-white rounded px-4 py-2"
+          >
+            ⟳
           </button>
         </div>
 
@@ -121,8 +180,8 @@ const ReporteCitas: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {citas.length > 0 ? (
-                citas.map((cita) => (
+              {filteredCitas.length > 0 ? (
+                filteredCitas.map((cita) => (
                   <tr key={cita.id}>
                     <td className="border border-blue-300 p-2">{cita.motivo}</td>
                     <td className="border border-blue-300 p-2">{cita.paciente.nombres}</td>
