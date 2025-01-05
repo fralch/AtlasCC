@@ -8,7 +8,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\CitaController;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('ReportComponent');
 });
 
 
