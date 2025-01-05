@@ -254,11 +254,7 @@ const ReporteCitas: React.FC = () => {
 
       {/* Footer */}
       <footer className="mt-8 text-center">
-        <img
-          src="/logo.png"
-          alt="Atlas CC Logo"
-          className="h-12 mx-auto"
-        />
+       
         <p className="text-blue-700 font-light">Atlas CC - Healing Your Health</p>
       </footer>
     </div>

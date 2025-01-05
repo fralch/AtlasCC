@@ -8,10 +8,13 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\CitaController;
 
 Route::get('/', function () {
-    return Inertia::render('ReportComponent');
+    return Inertia::render('Welcome');
 });
 
 
+Route::get('/report', function () {
+    return Inertia::render('ReportComponent');
+});
 
 Route::apiResource('pacientes', PacienteController::class);
 Route::apiResource('doctors', DoctorController::class);
