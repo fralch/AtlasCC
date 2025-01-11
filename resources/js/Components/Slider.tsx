@@ -105,8 +105,9 @@ const Slider = () => {
                     }}
                 />
                 <div
+                    className="hidden md:block"
                     style={{
-                        position: "absolute",
+                        position: "absolute", 
                         top: "47%",
                         left: "20%",
                         transform: "translate(-50%, -50%)",
@@ -236,6 +237,7 @@ const Slider = () => {
                     }}
                 />
                 <div
+                    className="hidden md:block"
                     style={{
                         position: "absolute",
                         top: "47%",
