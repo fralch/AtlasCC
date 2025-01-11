@@ -12,7 +12,7 @@ import Contactanos from "@/Components/contactanos";
 
 export default function Welcome() {
     return (
-        <div style={{ fontFamily: 'Poppins' , fontWeight: '300' }}>
+        <div style={{ fontFamily: 'Poppins', fontWeight: '300', overflowX: 'hidden' }}>
             <Head title="Atlas" />
             <Navbar />
             <Slider />
