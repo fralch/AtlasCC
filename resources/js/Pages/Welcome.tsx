@@ -16,18 +16,28 @@ export default function Welcome() {
             <Head title="Atlas" />
             <Navbar />
             <Slider />
-            <Nosotros />
-            <Servicios />
-            <Membresias />
-            <Doctores />
-            <Preguntas />
-            <Contactanos />
+            <section id="nosotros">
+                <Nosotros />
+            </section>
+            <section id="servicios">
+                <Servicios />
+            </section>
+            <section id="membresias">
+                <Membresias />
+            </section>
+            <section id="doctores">
+                <Doctores />
+            </section>
+            <section id="preguntas">
+                <Preguntas />
+            </section>
+            <section id="contactanos">
+                <Contactanos />
+            </section>
             <main className="bg-gray-100">
                 {/* Hero Section */}
 
-
                 {/* Appointment Form */}
-                
             </main>
         </div>
     );

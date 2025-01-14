@@ -31,11 +31,21 @@ const Navbar: React.FC = () => {
         </button>
       </div>
       <ul className={`md:flex md:space-x-6 absolute md:static bg-white md:bg-transparent left-0 w-full md:w-auto pl-4 md:pl-0 transition-all duration-300 ease-in z-50 ${isMenuOpen ? 'top-28' : 'top-[-490px]'}`}>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>Nosotros</li>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>Servicios</li>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>Doctores</li>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>Historias de éxito</li>
-        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>Contactanos</li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>
+          <a href="#nosotros">Nosotros</a>
+        </li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>
+          <a href="#servicios">Servicios</a>
+        </li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>
+          <a href="#doctores">Doctores</a>
+        </li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>
+          <a href="#historias">Historias de éxito</a>
+        </li>
+        <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>
+          <a href="#contactanos">Contactanos</a>
+        </li>
       </ul>
       <button
         className="hidden md:block bg-[#004aaf] text-white px-4 py-2 md:px-8 md:py-3 rounded-lg hover:bg-blue-700"
