@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="flex justify-between items-center px-4 py-4 bg-white shadow-md relative z-50">
-      <img src="/img/logo.png" alt="Logo" className="h-16 md:h-24 pl-2 md:pl-10" />
+      <img src="/img/logo.png" alt="Logo" className="h-20 md:h-24 pl-2 md:pl-10" />
       <div className="md:hidden">
         <button
           className="text-gray-700 focus:outline-none"
@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
           </svg>
         </button>
       </div>
-      <ul className={`md:flex md:space-x-6 absolute md:static bg-white md:bg-transparent left-0 w-full md:w-auto pl-4 md:pl-0 transition-all duration-300 ease-in z-50 ${isMenuOpen ? 'top-16' : 'top-[-490px]'}`}>
+      <ul className={`md:flex md:space-x-6 absolute md:static bg-white md:bg-transparent left-0 w-full md:w-auto pl-4 md:pl-0 transition-all duration-300 ease-in z-50 ${isMenuOpen ? 'top-28' : 'top-[-490px]'}`}>
         <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>Nosotros</li>
         <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>Servicios</li>
         <li className="text-gray-700 hover:text-blue-600 cursor-pointer font-bold mb-4 md:mb-0" style={{ fontFamily: 'Poppins', fontWeight: '400' }}>Doctores</li>
