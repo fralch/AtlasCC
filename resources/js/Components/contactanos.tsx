@@ -67,7 +67,7 @@ const Contactanos = () => {
                         height="400"
                         frameBorder="0"
                         scrolling="no"
-                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Huancayo,%201%20Junin,%20Peru+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.221347658776!2d-111.9219966846898!3d40.67109907933298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87528bb708837b63%3A0xbf535e37655b522!2s4546%20Atherton%20Dr%20%23204%2C%20Taylorsville%2C%20UT%2084123%2C%20EE.%20UU.!5e0!3m2!1ses!2sus!4v1699999999999"
                         title="Google Map"
                         className="rounded-lg shadow-lg"
                     ></iframe>
