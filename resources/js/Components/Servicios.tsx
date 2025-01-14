@@ -66,9 +66,13 @@ const Servicios = () => {
         <section className='bg-[url("/img/FONDOS/servicios.png")] py-20 bg-gray-50'>
             <AppointmentModal isOpen={isModalOpen} onClose={closeModal} />
             <div>
-                <h2 className="text-center text-white bg-[#007dff] max-w-xs mx-auto px-4 py-2 text-2xl rounded-lg">Explora nuestros</h2>
+                <h2 className="text-center text-white bg-[#007dff] max-w-xs mx-auto px-4 py-2 text-lg md:text-2xl rounded-lg">Explora nuestros</h2>
 
-                <h2 className="text-4xl font-bold text-center text-blue-600 mb-10"> <span className="text-[#38b5ff] text-8xl" style={{ fontFamily: 'Poppins' , fontWeight: '800' }}>Servicios</span></h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-center text-blue-600 mb-6 md:mb-10">
+                    <span className="text-[#38b5ff] text-5xl md:text-8xl" style={{ fontFamily: 'Poppins', fontWeight: '800' }}>
+                        Servicios
+                    </span>
+                </h2>
             </div>
            <div className="max-w-7xl mx-auto">
                 <Swiper

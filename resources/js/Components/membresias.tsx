@@ -3,9 +3,9 @@ import React from "react";
 const Membresias = () => {
     return (
         <div className='bg-[url("/img/FONDOS/membresias.png")] bg-cover bg-center bg-no-repeat bg-[#004aaf] p-4 pb-40'>
-            <div className="mt-10">
+            <div className="md:mt-10 mt-20">
                 <h2 className="text-center text-[#004aaf] bg-white max-w-xs mx-auto px-4 py-2 text-3xl rounded-3xl">Conoce nuestras</h2>
-                <h2 className="text-7xl font-bold text-center mb-10">
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-center mb-10">
                     <span className="text-[#38b5ff]" style={{ fontFamily: 'Poppins', fontWeight: '800' }}>Membresías</span>
                 </h2>
             </div>

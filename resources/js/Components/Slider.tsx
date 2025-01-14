@@ -161,6 +161,7 @@ const Slider = () => {
                 </div>
 
                 <div
+                    className="hidden md:block"
                     style={{
                         position: "absolute",
                         top: "47%",
@@ -224,6 +225,23 @@ const Slider = () => {
                         </div>
                     </section>
                 </div>
+
+                <div 
+                    className="md:hidden block"
+                    style={{
+                        position: "absolute",
+                        top: "70%",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        color: "#fff",
+                        textAlign: "center",
+                    }}
+                >
+                    <button className="w-full bg-[#004aaf] text-white px-8 py-4 rounded-lg hover:bg-blue-700" onClick={openModal}>
+                        Programa tu Cita
+                    </button>
+                </div>
+                                         
             </SwiperSlide>
             {/* Slide con imagen */}
             <SwiperSlide>
@@ -293,6 +311,7 @@ const Slider = () => {
                 </div>
 
                 <div
+                    className="hidden md:block"
                     style={{
                         position: "absolute",
                         top: "47%",
@@ -355,6 +374,21 @@ const Slider = () => {
                             </form>
                         </div>
                     </section>
+                </div>
+                <div 
+                    className="md:hidden block"
+                    style={{
+                        position: "absolute",
+                        top: "70%",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        color: "#fff",
+                        textAlign: "center",
+                    }}
+                >
+                    <button className="w-full bg-[#004aaf] text-white px-8 py-4 rounded-lg hover:bg-blue-700" onClick={openModal}>
+                        Programa tu Cita
+                    </button>
                 </div>
             </SwiperSlide>
         </Swiper>
