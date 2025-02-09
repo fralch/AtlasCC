@@ -35,28 +35,49 @@ class CitaController extends Controller
         }
     }
 
-    // Create new appointment
-    public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'paciente_id' => 'required|integer|exists:pacientes,id',
-            'doctor_id' => 'required|integer|exists:doctors,id',
-            'fecha' => 'required|date',
-            'hora' => 'required|date_format:H:i',
-            'motivo' => 'nullable|string',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 400);
-        }
-
-        try {
-            $cita = Cita::create($request->all());
-            return response()->json($cita, 201);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 400);
-        }
-    }
+     // Create new appointment
+     public function store(Request $request)
+     {
+         $validator = Validator::make($request->all(), [
+             'paciente_id' => 'required|integer|exists:pacientes,id',
+             'doctor_id' => 'required|integer|exists:doctors,id',
+             'fecha' => 'required|date',
+             'hora' => 'required|date_format:H:i',
+             'motivo' => 'nullable|string',
+         ]);
+ 
+         if ($validator->fails()) {
+             return response()->json(['errors' => $validator->errors()], 400);
+         }
+ 
+         try {
+             $cita = Cita::create($request->all());
+ 
+             // Obtén el número de teléfono del paciente
+             $paciente = Paciente::find($request->paciente_id);
+             $numeroTelefono = $paciente->telefono;
+ 
+             // Envía un mensaje de WhatsApp
+             $this->enviarMensajeWhatsApp($numeroTelefono, "Tu cita médica ha sido reservada para el " . $request->fecha . " a las " . $request->hora . ".");
+ 
+             return response()->json($cita, 201);
+         } catch (\Exception $e) {
+             return response()->json(['error' => $e->getMessage()], 400);
+         }
+     }
+ 
+     private function enviarMensajeWhatsApp($numero, $mensaje)
+     {
+         $client = new Client();
+         $response = $client->post('http://localhost:3000/send-message', [
+             'json' => [
+                 'numero' => $numero,
+                 'mensaje' => $mensaje
+             ]
+         ]);
+ 
+         return $response;
+     }
 
     // Update appointment status
     public function updateStatus(Request $request, $id)
