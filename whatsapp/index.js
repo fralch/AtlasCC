@@ -1,11 +1,12 @@
 const express = require('express');
 const { Client } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
 
-app.use(express.json());
+app.use(bodyParser.json());
 
 const client = new Client();
 
@@ -18,9 +19,9 @@ client.on('ready', () => {
     console.log('Cliente listo!');
 });
 
-client.on('message', msg => {
-    if (msg.body == '!ping') {
-        msg.reply('pong');
+client.on('message', async (msg) => {
+    if (msg.body.toLowerCase() === 'confirmar') {
+        await msg.reply('Cita confirmada');
     }
 });
 
@@ -28,6 +29,8 @@ client.initialize();
 
 app.post('/send-message', async (req, res) => {
     const { numero, mensaje } = req.body;
+
+    console.log('Enviando mensaje:', numero, mensaje);
 
     if (!numero || !mensaje) {
         return res.status(400).json({ error: 'Se requiere número y mensaje' });
