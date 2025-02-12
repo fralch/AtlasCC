@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Head, Link } from "@inertiajs/react";
 import axios from "axios";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
@@ -129,6 +130,7 @@ const ReporteCitas: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-blue-100 text-blue-900 p-6">
+      <Head title="Reporte" />
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-8">
         {/* Título */}
         <h1 className="text-2xl font-bold text-blue-800 mb-6 text-center">
