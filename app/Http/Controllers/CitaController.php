@@ -71,7 +71,7 @@ class CitaController extends Controller
     private function enviarMensajeWhatsApp($numero, $mensaje)
     {
         $client = new Client();
-        $response = $client->post('http://localhost:3000/send-message', [
+        $response = $client->post('http://158.69.7.86:3000/send-message', [
             'json' => [
                 'numero' => $numero,
                 'mensaje' => $mensaje
