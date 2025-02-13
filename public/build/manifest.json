@@ -1,25 +1,16 @@
 {
-  "_ReportComponent-3epF6AJy.js": {
-    "file": "assets/ReportComponent-3epF6AJy.js",
-    "name": "ReportComponent",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.tsx"
-    ],
-    "dynamicImports": [
-      "node_modules/html2canvas/dist/html2canvas.esm.js",
-      "node_modules/dompurify/dist/purify.es.js",
-      "node_modules/canvg/lib/index.es.js"
-    ]
+  "_index.esm-DlfdpbSK.js": {
+    "file": "assets/index.esm-DlfdpbSK.js",
+    "name": "index.esm"
   },
   "node_modules/canvg/lib/index.es.js": {
-    "file": "assets/index.es-COaukg0d.js",
+    "file": "assets/index.es-CCpYLUq-.js",
     "name": "index.es",
     "src": "node_modules/canvg/lib/index.es.js",
     "isDynamicEntry": true,
     "imports": [
-      "resources/js/app.tsx",
-      "_ReportComponent-3epF6AJy.js"
+      "_index.esm-DlfdpbSK.js",
+      "resources/js/Pages/Reportecitas.tsx"
     ]
   },
   "node_modules/dompurify/dist/purify.es.js": {
@@ -34,25 +25,42 @@
     "src": "node_modules/html2canvas/dist/html2canvas.esm.js",
     "isDynamicEntry": true
   },
+  "resources/js/Pages/Reportecitas.tsx": {
+    "file": "assets/Reportecitas-ehFXe-dD.js",
+    "name": "Reportecitas",
+    "src": "resources/js/Pages/Reportecitas.tsx",
+    "isEntry": true,
+    "imports": [
+      "_index.esm-DlfdpbSK.js"
+    ],
+    "dynamicImports": [
+      "node_modules/html2canvas/dist/html2canvas.esm.js",
+      "node_modules/dompurify/dist/purify.es.js",
+      "node_modules/canvg/lib/index.es.js"
+    ]
+  },
   "resources/js/Pages/Welcome.tsx": {
-    "file": "assets/Welcome-BQIdrXRa.js",
+    "file": "assets/Welcome-bRvuLXql.js",
     "name": "Welcome",
     "src": "resources/js/Pages/Welcome.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "resources/js/app.tsx"
+      "_index.esm-DlfdpbSK.js"
     ],
     "css": [
       "assets/Welcome-ByNiLjPe.css"
     ]
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-BSCDgtTy.js",
+    "file": "assets/app-CXphmplr.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
+    "imports": [
+      "_index.esm-DlfdpbSK.js"
+    ],
     "dynamicImports": [
-      "_ReportComponent-3epF6AJy.js",
+      "resources/js/Pages/Reportecitas.tsx",
       "resources/js/Pages/Welcome.tsx"
     ],
     "css": [

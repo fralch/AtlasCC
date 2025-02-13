@@ -49,7 +49,7 @@ interface Cita {
   doctor: Doctor;
 }
 
-const ReporteCitas: React.FC = () => {
+const Reportecitas: React.FC = () => {
   const [citas, setCitas] = useState<Cita[]>([]);
   const [filteredCitas, setFilteredCitas] = useState<Cita[]>([]);
   const [fecha, setFecha] = useState<string>("");
@@ -124,7 +124,7 @@ const ReporteCitas: React.FC = () => {
       Estado: cita.estado
     })));
     const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "ReporteCitas");
+    XLSX.utils.book_append_sheet(wb, ws, "Reportecitas");
     XLSX.writeFile(wb, "reporte_citas.xlsx");
   };
 
@@ -263,4 +263,4 @@ const ReporteCitas: React.FC = () => {
   );
 };
 
-export default ReporteCitas;
+export default Reportecitas;

@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 
 Route::get('/report', function () {
-    return Inertia::render('ReportComponent');
+    return Inertia::render('Reportecitas');
 });
 
 Route::apiResource('pacientes', PacienteController::class);
