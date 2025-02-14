@@ -108,4 +108,20 @@ class CitaController extends Controller
             return response()->json(['error' => $e->getMessage()], 400);
         }
     }
+
+    public function whatsappSendPost(Request $request)
+    {
+        $numero = $request->input('numero');
+        $mensaje = $request->input('mensaje');
+
+        $client = new Client();
+        $response = $client->post('http://158.69.7.86:3000/send-message', [
+            'json' => [
+                'numero' => $numero,
+                'mensaje' => $mensaje
+            ]
+        ]);
+
+        return response()->json(['status' => 'success', 'data' => json_decode($response->getBody(), true)]);
+    }
 }

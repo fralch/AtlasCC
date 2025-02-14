@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from '@/config/configAxios';
+import axios from 'axios';
 import Swal from 'sweetalert2';
 
 interface AppointmentModalProps {
@@ -28,39 +28,50 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
     e.preventDefault();
     try {
       const [fecha, hora] = formData.fecha.split('T');
-      const response = await axios.post('http://45.236.130.80:8000/pacientes', formData);
-      const { id: paciente_id } = response.data;
-      const response2 = await axios.post('http://45.236.130.80:8000/citas', {
-        paciente_id,
-        doctor_id: 1,
-        fecha,
-        hora,
-        motivo: "Accidente de auto"
-      });
+
+      // Construir el mensaje personalizado
+      const mensaje = `¡Hola, ${formData.nombres}! 😊 Tu cita en Clínica Atlas está agendada para el ${fecha} a las ${hora}. ⏰ Responde con ‘Confirmar’ para asegurar tu espacio. Si necesitas cambiarla, avísanos con tiempo. ¡Nos vemos pronto! 💙`;
+
+      // Enviar mensaje
+      await sendMessage(formData.telefono, mensaje);
+
       Swal.fire({
         icon: 'success',
-        title: '¡Cita programada!',
-        text: 'Tu cita ha sido programada con éxito.',
+        title: '¡Mensaje enviado!',
+        text: 'Tu mensaje ha sido enviado con éxito.',
         confirmButtonText: 'Aceptar',
         confirmButtonColor: '#0f68d9'
       }).then(() => {
-            setFormData({
-                nombres: "",
-                email: "correo@mail.com",
-                telefono: "",
-                fecha: "",
-                hora: ""
-            });
+        setFormData({
+          nombres: "",
+          email: "correo@mail.com",
+          telefono: "",
+          fecha: "",
+          hora: ""
         });
-      onClose();
+        onClose();
+      });
     } catch (error) {
       console.error(error);
       Swal.fire({
         icon: 'error',
         title: '¡Error!',
-        text: 'Ha ocurrido un error al programar la cita.',
+        text: 'Ha ocurrido un error al enviar el mensaje.',
         confirmButtonText: 'Aceptar'
       });
+    }
+  };
+
+  const sendMessage = async (numero: string, mensaje: string) => {
+    try {
+      const response = await axios.post('/whatsapp_send', {
+        numero: numero,
+        mensaje: mensaje
+      });
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error;
     }
   };
 
@@ -119,7 +130,6 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
             Programar tu cita
           </button>
         </form>
-        
       </div>
     </div>
   );
