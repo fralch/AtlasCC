@@ -59,7 +59,7 @@ const Reportecitas: React.FC = () => {
   const [motivo, setMotivo] = useState<string>("");
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/citas')
+    axios.get('http://45.236.130.80:8000/citas')
       .then(response => {
         setCitas(response.data);
         setFilteredCitas(response.data);

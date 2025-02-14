@@ -40,7 +40,7 @@
     ]
   },
   "resources/js/Pages/Welcome.tsx": {
-    "file": "assets/Welcome-bRvuLXql.js",
+    "file": "assets/Welcome-hSf8doju.js",
     "name": "Welcome",
     "src": "resources/js/Pages/Welcome.tsx",
     "isDynamicEntry": true,
@@ -52,7 +52,7 @@
     ]
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-CXphmplr.js",
+    "file": "assets/app-C1AoKmIf.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,

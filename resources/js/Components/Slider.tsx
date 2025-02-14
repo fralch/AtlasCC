@@ -36,9 +36,9 @@ const Slider = () => {
             console.log(fecha); //2025-01-11 21:54
             console.log(hora); // 23:51
 
-            const response = await axios.post('http://127.0.0.1:8000/pacientes', formData);
+            const response = await axios.post('http://45.236.130.80:8000/pacientes', formData);
             const {id: paciente_id} = response.data;
-            const response2 = await axios.post('http://127.0.0.1:8000/citas', {
+            const response2 = await axios.post('http://45.236.130.80:8000/citas', {
                 paciente_id,
                 doctor_id: 1,
                 fecha,
