@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-const APP_URL = import.meta.env.VITE_APP_URL || 'http://127.0.0.1:8000';
+const APP_URL = import.meta.env.VITE_APP_URL || 'http://50.28.103.10';
 
 interface AppointmentModalProps {
   isOpen: boolean;

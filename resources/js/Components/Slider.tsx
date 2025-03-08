@@ -5,7 +5,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import AppointmentModal from './AppointmentModal';
 // Get the app URL from Laravel's environment configuration
-const APP_URL = import.meta.env.VITE_APP_URL || 'http://127.0.0.1:8000';
+const APP_URL = import.meta.env.VITE_APP_URL || 'http://50.28.103.10';
 
 import "swiper/css";
 import "swiper/css/navigation";
