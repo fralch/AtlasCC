@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-// import axios from '@/config/configAxios';
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import axios from '@/config/configAxios';
 import Swal from 'sweetalert2';
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -37,17 +36,24 @@ const Slider = () => {
             console.log(fecha); //2025-01-11 21:54
             console.log(hora); // 23:51
 
-            // Construir el mensaje personalizado
-            const mensaje = `¡Hola, ${formData.nombres}! 😊 Tu cita en Clínica Atlas está agendada para el ${fecha} a las ${hora}. ⏰ Responde con ‘Confirmar’ para asegurar tu espacio. Si necesitas cambiarla, avísanos con tiempo. ¡Nos vemos pronto! 💙`;
+            const response = await axios.post('http://127.0.0.1:8000/pacientes', formData);
+            const { id: paciente_id } = response.data;
+            const response2 = await axios.post('http://127.0.0.1:8000/citas', {
+                paciente_id,
+                doctor_id: 1,
+                fecha,
+                hora,
+                motivo: "Accidente de auto"
+            });
+            console.log(response2.data);
 
-            // Enviar mensaje
-            const response = await sendMessage(formData.telefono, mensaje);
-            console.log(response.data);
+            // Enviar mensaje de confirmación por WhatsApp
+            // await sendMessage(formData.telefono, `¡Hola ${formData.nombres}! Tu cita ha sido programada para el ${fecha} a las ${hora}.`);
 
             Swal.fire({
                 icon: 'success',
-                title: '¡Mensaje enviado!',
-                text: 'Tu mensaje ha sido enviado con éxito.',
+                title: '¡Cita programada!',
+                text: 'Tu cita ha sido programada con éxito.',
                 confirmButtonText: 'Aceptar',
                 confirmButtonColor: '#0f68d9'
             }).then(() => {
@@ -64,13 +70,21 @@ const Slider = () => {
             Swal.fire({
                 icon: 'error',
                 title: '¡Error!',
-                text: 'Ha ocurrido un error al enviar el mensaje.',
+                text: 'Ha ocurrido un error al programar la cita.',
                 confirmButtonText: 'Aceptar'
             });
         }
     };
 
-    const sendMessage = async (numero : string, mensaje : string) => {
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const sendMessage = async (numero: string, mensaje: string) => {
         try {
             const response = await axios.post('/whatsapp_send', {
                 numero: numero,
@@ -81,14 +95,6 @@ const Slider = () => {
             console.error(error);
             throw error;
         }
-    };
-    
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
     };
 
     return (

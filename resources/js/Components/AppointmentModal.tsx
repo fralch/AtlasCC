@@ -29,16 +29,26 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
     try {
       const [fecha, hora] = formData.fecha.split('T');
 
+      const response = await axios.post('http://127.0.0.1:8000/pacientes', formData);
+      const { id: paciente_id } = response.data;
+      const response2 = await axios.post('http://127.0.0.1:8000/citas', {
+        paciente_id,
+        doctor_id: 1,
+        fecha,
+        hora,
+        motivo: "Accidente de auto"
+      });
+
       // Construir el mensaje personalizado
       const mensaje = `¡Hola, ${formData.nombres}! 😊 Tu cita en Clínica Atlas está agendada para el ${fecha} a las ${hora}. ⏰ Responde con ‘Confirmar’ para asegurar tu espacio. Si necesitas cambiarla, avísanos con tiempo. ¡Nos vemos pronto! 💙`;
 
       // Enviar mensaje
-      await sendMessage(formData.telefono, mensaje);
+      // await sendMessage(formData.telefono, mensaje);
 
       Swal.fire({
         icon: 'success',
-        title: '¡Mensaje enviado!',
-        text: 'Tu mensaje ha sido enviado con éxito.',
+        title: '¡Cita programada!',
+        text: 'Tu cita ha sido programada con éxito.',
         confirmButtonText: 'Aceptar',
         confirmButtonColor: '#0f68d9'
       }).then(() => {
@@ -56,7 +66,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
       Swal.fire({
         icon: 'error',
         title: '¡Error!',
-        text: 'Ha ocurrido un error al enviar el mensaje.',
+        text: 'Ha ocurrido un error al programar la cita.',
         confirmButtonText: 'Aceptar'
       });
     }

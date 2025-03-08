@@ -59,7 +59,7 @@ class CitaController extends Controller
             $numeroTelefono = $paciente->telefono;
 
             // Envía un mensaje de WhatsApp
-            $this->enviarMensajeWhatsApp($numeroTelefono, "Tu cita médica ha sido reservada para el " . $request->fecha . " a las " . $request->hora . ". Por favor, responde con 'Confirmar' para confirmar tu cita.");
+            // $this->enviarMensajeWhatsApp($numeroTelefono, "Tu cita médica ha sido reservada para el " . $request->fecha . " a las " . $request->hora . ". Por favor, responde con 'Confirmar' para confirmar tu cita.");
 
             return response()->json($cita, 201);
         } catch (\Exception $e) {
