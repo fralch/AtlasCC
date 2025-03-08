@@ -4,6 +4,9 @@ import Swal from 'sweetalert2';
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import AppointmentModal from './AppointmentModal';
+// Get the app URL from Laravel's environment configuration
+const APP_URL = import.meta.env.VITE_APP_URL || 'http://127.0.0.1:8000';
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -36,9 +39,9 @@ const Slider = () => {
             console.log(fecha); //2025-01-11 21:54
             console.log(hora); // 23:51
 
-            const response = await axios.post('http://127.0.0.1:8000/pacientes', formData);
+            const response = await axios.post(APP_URL + '/pacientes', formData);
             const { id: paciente_id } = response.data;
-            const response2 = await axios.post('http://127.0.0.1:8000/citas', {
+            const response2 = await axios.post(APP_URL + '/citas', {
                 paciente_id,
                 doctor_id: 1,
                 fecha,

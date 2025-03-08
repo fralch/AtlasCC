@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+const APP_URL = import.meta.env.VITE_APP_URL || 'http://127.0.0.1:8000';
 
 interface AppointmentModalProps {
   isOpen: boolean;
@@ -29,9 +30,9 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
     try {
       const [fecha, hora] = formData.fecha.split('T');
 
-      const response = await axios.post('http://127.0.0.1:8000/pacientes', formData);
+      const response = await axios.post(APP_URL + '/pacientes', formData);
       const { id: paciente_id } = response.data;
-      const response2 = await axios.post('http://127.0.0.1:8000/citas', {
+      const response2 =  await axios.post(APP_URL + '/citas', {
         paciente_id,
         doctor_id: 1,
         fecha,
