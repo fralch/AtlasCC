@@ -3,9 +3,10 @@ import React from "react";
 const Doctores = () => {
     return (
         <div>
-            <div className='hidden md:block bg-[url("/img/FONDOS/doctores.png")] bg-cover bg-center bg-no-repeat bg-[#004aaf] p-4 pb-40'>
-                <div className="mt-10 text-center">
-                    <h2 className="text-[#38b5ff] text-7xl ml-44 mt-20">
+            {/* Doctors section - removed hidden class to show on all devices */}
+            <div className='bg-[url("/img/FONDOS/doctores.png")] bg-cover bg-center bg-no-repeat bg-[#004aaf] p-4 pb-20 md:pb-40'>
+                <div className="mt-5 md:mt-10 text-center">
+                    <h2 className="text-[#38b5ff] text-4xl md:text-5xl lg:text-7xl mx-auto md:ml-44 mt-10 md:mt-20">
                         {" "}
                         <span
                             className="text-[#004aaf]"
@@ -21,69 +22,72 @@ const Doctores = () => {
                         </span>
                     </h2>
                 </div>
-                <div className="w-[80%] mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {/* Membresía 1 */}
-                        <div className="p-3 rounded-3xl w-[350px] mx-auto">
-                            <img src="/img/FOTOS/doctores1.png" alt="" />
+                <div className="w-full md:w-[90%] lg:w-[80%] mx-auto px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                        {/* Doctor 1 */}
+                        <div className="p-3 rounded-3xl max-w-[350px] w-full mx-auto">
+                            <img 
+                                src="/img/FOTOS/doctores1.png" 
+                                alt="Doctor Mark Aldridge" 
+                                className="w-full h-auto"
+                            />
                             <h3
-                                className="font-bold text-white"
+                                className="font-bold text-white mt-2"
                                 style={{ fontWeight: "400" }}
                             >
-                                Lorem ipsum
+                               Doctor  
                             </h3>
-                            <p className="text-3xl font-semibold text-[#004aaf] mb-4">
-                                Lorem ipsum
+                            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#004aaf] mb-4">
+                                Mark Aldridge
                             </p>
-                            <p className="text-white">
-                                Lorem ipsum dolor sit amet, consectetuer
-                                adipiscing elit, sed diam nonummy nibh{" "}
-                            </p>
-                           
                         </div>
-                        <div className="p-3 rounded-3xl w-[350px] mx-auto">
-                            <img src="/img/FOTOS/doctores2.png" alt="" />
+                        
+                        {/* Doctor 2 */}
+                        <div className="p-3 rounded-3xl max-w-[350px] w-full mx-auto">
+                            <img 
+                                src="/img/FOTOS/doctores2.png" 
+                                alt="Doctor Adam" 
+                                className="w-full h-auto"
+                            />
                             <h3
-                                className="font-bold text-white"
+                                className="font-bold text-white mt-2"
                                 style={{ fontWeight: "400" }}
                             >
-                                Lorem ipsum
+                               Doctor
                             </h3>
-                            <p className="text-3xl font-semibold text-[#004aaf] mb-4">
-                                Lorem ipsum
+                            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#004aaf] mb-4">
+                                Adam
                             </p>
-                            <p className="text-white">
-                                Lorem ipsum dolor sit amet, consectetuer
-                                adipiscing elit, sed diam nonummy nibh{" "}
-                            </p>
-                           
                         </div>
-                        <div className="p-3 rounded-3xl w-[350px] mx-auto">
-                            <img src="/img/FOTOS/doctores3.png" alt="" />
+                        
+                        {/* Doctor 3 */}
+                        <div className="p-3 rounded-3xl max-w-[350px] w-full mx-auto">
+                            <img 
+                                src="/img/FOTOS/doctores3.png" 
+                                alt="Doctor Lorem ipsum" 
+                                className="w-full h-auto"
+                            />
                             <h3
-                                className="font-bold text-white"
+                                className="font-bold text-white mt-2"
                                 style={{ fontWeight: "400" }}
                             >
-                                Lorem ipsum
+                                Doctor
                             </h3>
-                            <p className="text-3xl font-semibold text-[#004aaf] mb-4">
+                            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#004aaf] mb-4">
                                 Lorem ipsum
                             </p>
-                            <p className="text-white">
-                                Lorem ipsum dolor sit amet, consectetuer
-                                adipiscing elit, sed diam nonummy nibh{" "}
-                            </p>
-                          
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* Success stories section */}
             <div className='bg-[url("/img/FONDOS/historias_exito.png")] bg-cover bg-center bg-no-repeat bg-[#004aaf] p-4 pb-20 md:pb-40'>
                 <div
                     className="flex flex-col lg:flex-row items-center mt-5 md:mt-10 max-w-7xl mx-auto px-4 md:px-8"
                     id="historias"
                 >
-                    {/* Texto */}
+                    {/* Text */}
                     <div className="flex-1 mb-8 lg:mb-0">
                         <h4
                             className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-2"
@@ -111,7 +115,7 @@ const Doctores = () => {
                         darnos la oportunidad de retomar nuestras vidas."
                         </p>
                     </div>
-                    {/* Imagen */}
+                    {/* Image */}
                     <div className="flex-1 flex justify-center">
                         <img
                             src="/img/FOTOS/exito.png"
